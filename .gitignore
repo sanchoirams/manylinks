@@ -1,0 +1,8 @@
+.idea
+.vscode
+.venv
+venv
+media
+*.pyc
+*.pyo
+__pycache__
