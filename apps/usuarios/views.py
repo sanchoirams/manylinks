@@ -19,13 +19,18 @@ def login_usuario(request):
             if user and user.is_active:
                 login(request, user)
                 messages.success(request, 'Você fez login')
-                return HttpResponse('Você fez login com sucesso')
+                return redirect('home:pagina_inicial')
             else:
                 messages.error(request, 'Usuário ou senha inválido.')
                 return redirect('usuarios:login')
     form = LoginForm()
     context['form'] = form
     return render(request, template_name, context)
+
+
+def logout_usuario(request):
+    logout(request)
+    return redirect('usuarios:login')
 
 
 def add_usuario(request):

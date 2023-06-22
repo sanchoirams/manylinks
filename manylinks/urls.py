@@ -19,10 +19,13 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+from links.views import perfil
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('usuarios/', include('usuarios.urls', namespace='usuarios')),
     path('links/', include('links.urls', namespace='links')),
+    path('<slug:username>/', perfil, name='perfil'),
     path('', include('home.urls', namespace='home')),
 ]
 

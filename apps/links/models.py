@@ -9,6 +9,8 @@ class Link(models.Model):
     url = models.URLField(verbose_name='URL', help_text='Informe a URL de destino')
     usuario = models.ForeignKey(User, verbose_name='Usuário',
                                 on_delete=models.CASCADE)
+    clique = models.PositiveIntegerField(verbose_name='Cliques', default=0)
+    visualizacao = models.PositiveIntegerField(verbose_name='Visualização', default=0)
 
     class Meta:
         verbose_name = 'Link'
