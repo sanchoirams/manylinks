@@ -9,7 +9,10 @@ from links.models import Link
 def pagina_inicial(request):
     template_name = 'base.html'
     links = Link.objects.filter(usuario=request.user)
-    visualizacao = links.first().visualizacao
+    try:
+        visualizacao = links.first().visualizacao
+    except: AttributeError:
+        visualizacao = 0
     context = {
         'links': links,
         'visualizacao': visualizacao
