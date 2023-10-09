@@ -34,7 +34,7 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
-CSRF_TRUSTED_ORIGINS = ['https://".django.pro.br']
+CSRF_TRUSTED_ORIGINS = ['https://*.django.pro.br']
 
 LOGIN_URL = '/usuarios/login'
 
